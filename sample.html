@@ -1,0 +1,127 @@
+
+<html>
+<head>
+<title>Login Form</title>
+<script type="text/javascript">
+
+
+function RestrictSpace() {
+    if (event.keyCode == 32) {
+        return false;
+    }
+}
+  
+  function validate()
+{
+
+//window.alert(open);
+
+var user=document.getElementById('uid');
+var pass=document.getElementById('pwd');
+
+//user=user.trim();
+
+if((user.value=="")&&(pass.value==""))
+{
+
+alert("UserId  and password can't be blank");
+return false;
+}
+
+if(user.value=="")
+{
+
+alert("UserId can't be blank");
+return false;
+}
+
+if(user.value.length < 8)
+{
+
+alert("UserId is invalid");
+return false;
+}
+
+if(pass.value.length==0)
+{
+
+alert("Password can't be blank");
+return false;
+}
+
+if((pass.value.length <4) || (pass.value.length > 8))
+{
+
+alert("Your Password must be 4 to 8 Character");
+return false;
+}
+
+else 
+{
+
+alert("Successfully logged in");
+}
+}
+
+
+</script>
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#section {
+
+    width:350px;
+    float:right;
+    padding:10px;	 	 
+}
+#footer {
+   
+width:350px;
+  float:center;
+   padding:10px;	 	 
+}
+#placeholder{
+color:blue;
+width:350px;
+}
+/*.usr{
+background-color:grey;
+    
+    text-align:center;
+    padding:5px;
+}*/
+</style>
+</head>
+ <body background="cover.jpg">
+<form name="myForm" action="process.php" method="post" onsubmit="return validate()";>
+<div id="header">
+<h2>Sign In Page</h2>
+</div>
+<div id="section">
+<table>
+<tr>
+<td>Username</td>
+<td><input type="text" id="uid" name="username" class="usr" placeholder="Name" onkeypress="return RestrictSpace()"></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" id="pwd"  name="password"  class="usr" placeholder="Password" onkeypress="return RestrictSpace()"></td>
+<tr>
+</div>
+<div id="footer">
+<tr>
+<td>
+<button name="login" type="login" value="Login">Login</button>
+<button type="reset" value="Reset">Reset</button>
+<td>
+</tr>
+</div>
+</table>
+</form>
+</body>
+</html>
+
